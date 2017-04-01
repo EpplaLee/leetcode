@@ -1,6 +1,6 @@
 <script>
-
-function detectCapital(word) {
+{/*first come in mind*/}
+function detectCapital1(word) {
     var length = word.length;
     if(IsUpper(word[0])) {
         let count = 1;
@@ -32,13 +32,22 @@ function detectCapital(word) {
     } 
 }
 
-console.log(detectCapital('Word'));
+console.log(detectCapital1('Word'));
+console.log(detectCapital1('WoRd')); 
+console.log(detectCapital1('WORD'));     
+console.log(detectCapital1('worD'));  
+console.log(detectCapital1('word')); 
 
-console.log(detectCapital('WoRd')); 
 
-console.log(detectCapital('WORD'));     
+{/*use RegExp*/}
+function detectCapital2(word) {
+    var detecter = /^[A-Z]+$|^[a-z]+$|^[A-Z][a-z]+$/;
+    return detecter.test(word);
+}
 
-console.log(detectCapital('worD'));  
-
-console.log(detectCapital('word')); 
+console.log(detectCapital2('Word'));
+console.log(detectCapital2('WoRd')); 
+console.log(detectCapital2('WORD'));     
+console.log(detectCapital2('worD'));  
+console.log(detectCapital2('word')); 
 </script>
