@@ -1,22 +1,38 @@
 <script>
 
 function addBinary(a, b) {
-    
-}
-
-function sumStrings(a,b){
-    var res='', c=0;
+    let c = 0;
+    let sum = "";
     a = a.split('');
     b = b.split('');
-    while (a.length || b.length || c){
-        c += ~~a.pop() + ~~b.pop();
-        res = c % 10 + res;
-        c = c>9;
+    while(a.length | b.length | c) {
+
+        switch( ~~a.pop() + ~~b.pop() + c) {
+            case 0:
+                sum = "0" + sum;
+                c = 0;
+                break;
+            case 1:
+                sum = "1" + sum;
+                c = 0;
+                break;
+            case 2: 
+                sum = "0" + sum;
+                c = 1;
+                break;
+            case 3:
+                sum = "1" + sum;
+                c = 1;
+                break;
+        }
     }
-    return res.replace(/^0+/,'');
+    return sum;
 }
 
-console.log(addBinary('1101', '11'));    
+
+
+console.log(addBinary('', '11010011'));    
 console.log(addBinary('101', '11'));
 console.log(addBinary('10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101', '110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011'));
+
 </script>
