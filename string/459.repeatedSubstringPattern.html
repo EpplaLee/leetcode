@@ -1,0 +1,25 @@
+<script>
+
+function repeatedSubstringPattern(str) {
+    let length = str.length;
+    for(let i = Math.floor(length / 2); i > 0; i--) {
+        if(length % i === 0) {
+            let subString = str.substring(0,i);
+            let pattern = '';
+            for(let t = length / i; t > 0; t--) {
+                pattern += subString;
+            }
+            if(pattern === str) return true;
+        }
+    }
+    return false;
+}
+
+console.log(repeatedSubstringPattern("abababab"));
+console.log(repeatedSubstringPattern("ababababc"));
+console.log(repeatedSubstringPattern("ababababcababababc"));
+console.log(repeatedSubstringPattern("aaaaa"));
+
+
+    
+</script>
