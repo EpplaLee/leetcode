@@ -1,0 +1,29 @@
+<script>
+    function reverseVowels(s) {
+        let vowels = "aiueoAIUEO";
+        s = s.split('');
+        let i = 0;
+        let j = s.length - 1;
+        var temp;
+        while(i < j ) {
+            while(i < j && vowels.indexOf(s[i]) === -1) {
+                i++;
+            }
+            while(i < j && vowels.indexOf(s[j]) === -1) {
+                j--;
+            }
+            console.log(i,j);
+            if(i < j) {
+                temp = s[i];
+                s[i] = s[j];
+                s[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        return s.join('');
+    }
+    console.log(reverseVowels('abo'));
+     
+
+</script>
