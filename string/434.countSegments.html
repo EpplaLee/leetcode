@@ -1,0 +1,18 @@
+<script>
+
+function countSegments(s) {
+    let str = s.trim();
+    if(str === "") return 0;
+    else {
+        var count = 1;
+        for(let i = 1; i < str.length - 1; i++) {
+            
+            if(str[i] === " " && str[i + 1] !== " ") {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+    console.log(countSegments('  dvf ;;; shdi   gd  d'));
+</script>

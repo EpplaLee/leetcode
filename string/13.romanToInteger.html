@@ -1,0 +1,47 @@
+<script>
+
+function romanToInteger(s) {
+    let reg = /[^IVXLCDM]/;
+    if(reg.test(s) || s ==='') return false;
+    //用正则排除无关变量
+    let sum = 0;
+    for(let i = 0; i < s.length; i++) {
+        switch(s[i]) {
+            case "I": 
+                sum += 1;
+                break;
+            case "V": 
+                sum += 5;
+                break;
+            case "X": 
+                sum += 10;
+                break;
+            case "L": 
+                sum += 50;
+                break;
+            case "C": 
+                sum += 100;
+                break;
+            case "D": 
+                sum += 500;
+                break;
+            case "M": 
+                sum += 1000;
+                break;
+            default: 
+                break;
+        }
+    }
+    if(s.indexOf("IV") !== -1) sum -= 2;
+    if(s.indexOf("IX") !== -1) sum -= 2;
+    if(s.indexOf("XL") !== -1) sum -= 20;
+    if(s.indexOf("XC") !== -1) sum -= 20;
+    if(s.indexOf("CD") !== -1) sum -= 200;
+    if(s.indexOf("CM") !== -1) sum -= 200;
+    return sum;
+}
+
+console.log(romanToInteger("CMXCIX"));
+
+    
+</script>

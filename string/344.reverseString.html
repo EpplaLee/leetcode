@@ -1,0 +1,22 @@
+<script>
+    {/*first come in mind*/}
+function reverseString1(str) { 
+    var reverse = '';
+    for(let i = str.length - 1; i > -1; i--) {
+        reverse += str[i];
+    }
+    return reverse;
+}
+
+{/*Solution in one line*/}
+function reverseString2(str) {
+    str = str.split('').reverse().join('');
+    return str;
+}
+console.log(reverseString2('HelloWorld'));
+    console.log(reverseString2('ab'));
+    console.log(reverseString2('abc'));
+    console.log(reverseString2('a b c'));
+
+</script>
+

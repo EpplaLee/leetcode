@@ -1,0 +1,24 @@
+
+<script>
+function validPalindrome(str) {
+    const reg = /[a-zA-Z0-9]+/g;
+    if(str.match(reg)) {
+    var filtered = str.match(reg).join('').toUpperCase();
+    if(filtered === filtered.split('').reverse().join('')){
+        return true;
+    } else {
+        return false;
+    }
+    } else {
+        return true;
+    }
+}
+
+console.log(validPalindrome('re;.mm;e r'));
+console.log(validPalindrome('re;.m;e r'));
+console.log(validPalindrome('rek;.mm;e r'));
+console.log(validPalindrome(''));
+console.log(validPalindrome('  '));
+console.log(validPalindrome(' Aa '));
+console.log(validPalindrome(' 9a '));
+</script>
